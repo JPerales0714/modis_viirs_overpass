@@ -39,5 +39,6 @@ Otherwise, simply follow the prompting instructions on-screen.
 
 * Changing MODIS Bands to analyze or the temporal/spatial search criteria for a match must be modified within the code.
 * Several functions are abstracted to support several types of inputs, but the program wasn't necessarily designed to support the same, so be cautious of results from anything save Longwave to Longwave band comparisons. Existing functions can always be utilized in different ways.
+* While Frame Positions (referred to as Along Track Indices) are always in their "from zero" (indexable) format, Scans are frequently in their "numerical" (counted) format. As a result, whenever indexing using scans, 1 must be subtracted from the scan value to become the correct corresponding index. The benefit of this is that scan values can be printed and easily understood. 
 * Currently info_to_database averages all variances (of radiance values) per scan angle and submits those points to the database. This function can be modified to utilize any and all of the data from the Two-Point-Comparison objects.
 * This code was meant to be introductory - so certain error-handling operations, opprotunities for shorter code, and frivilous method defining was ignored.
